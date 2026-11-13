@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inglês para Todos – Aprende inglês online com 100 aulas, áudio e quizzes</title>
+  <meta name="description" content="Plataforma para falantes de português aprenderem inglês: 100 aulas, áudio de pronúncia e quizzes. Começa grátis, sem e-mail.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="bg3d" aria-hidden="true"></canvas>
+  <div class="css-shapes" aria-hidden="true">
+    <span class="shape s1"></span><span class="shape s2"></span><span class="shape s3"></span>
+    <span class="shape s4"></span><span class="shape s5"></span>
+  </div>
+
+  <header class="site-header" id="topo">
+    <div class="container nav-wrap">
+      <a href="#inicio" class="logo" data-nav="inicio"><span class="logo-mark">EN</span> Inglês para Todos</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <a href="#inicio" data-nav="inicio">Início</a>
+        <a href="#funcionalidade" data-nav="funcionalidade">Funcionalidade</a>
+        <a href="#licencas" data-nav="licencas">Licenças</a>
+        <a href="#avaliacoes" data-nav="avaliacoes">Avaliações</a>
+        <a href="#faq" data-nav="faq">Perguntas</a>
+        <a href="#contactos" data-nav="contactos">Contactos</a>
+        <a href="#curso" class="btn btn-primary btn-sm" data-open-course>Começar Agora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= PÁGINA INICIAL ================= -->
+    <div id="landing">
+      <section id="inicio" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <span class="badge"><i class="fa-solid fa-star"></i> 100 aulas · Áudio · Quizzes</span>
+            <h1>Aprende <span class="gold">inglês</span> a partir do português, ao teu ritmo.</h1>
+            <p class="lead">Um curso completo para falantes de português: aulas curtas, frases com tradução, pronúncia com voz natural e desafios para praticares todos os dias. Começa agora, sem e-mail e sem palavra-passe.</p>
+            <div class="hero-actions">
+              <a href="#curso" class="btn btn-primary btn-lg" data-open-course><i class="fa-solid fa-rocket"></i> Criar Conta Grátis / Começar Agora</a>
+              <a href="#licencas" class="btn btn-outline btn-lg" data-nav="licencas">Ver Licenças</a>
+            </div>
+            <ul class="hero-stats">
+              <li><strong>100</strong><span>aulas</span></li>
+              <li><strong>10</strong><span>módulos</span></li>
+              <li><strong>A1–C1</strong><span>níveis</span></li>
+              <li><strong>0 MT</strong><span>para começar</span></li>
+            </ul>
+          </div>
+          <div class="hero-card" aria-hidden="true">
+            <div class="mock-top"><i class="fa-solid fa-circle"></i><i class="fa-solid fa-circle"></i><i class="fa-solid fa-circle"></i></div>
+            <p class="mock-label">Aula 1 · Cumprimentos</p>
+            <div class="mock-phrase"><div><b>Good morning</b><small>Bom dia</small></div><span class="mock-play"><i class="fa-solid fa-volume-high"></i></span></div>
+            <div class="mock-phrase"><div><b>Nice to meet you</b><small>Prazer em conhecer-te</small></div><span class="mock-play"><i class="fa-solid fa-volume-high"></i></span></div>
+            <div class="mock-quiz"><small>Quiz</small><p>Como se diz “Obrigado”?</p><span class="chip">Thank you <i class="fa-solid fa-check"></i></span><span class="chip dim">Please</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="funcionalidade" class="section">
+        <div class="container">
+          <h2 class="section-title">Como <span class="gold">funciona</span></h2>
+          <p class="section-sub">Três passos simples em cada aula: aprender, ouvir e praticar.</p>
+          <div class="cards-3">
+            <article class="card">
+              <div class="icon"><i class="fa-solid fa-book-open"></i></div>
+              <h3>1. Aulas organizadas</h3>
+              <p>100 aulas divididas em 10 módulos, do nível iniciante ao avançado. Cada aula traz frases e vocabulário com tradução.</p>
+              <div class="sim sim-lesson">
+                <div class="sim-row"><b>Hello</b><small>Olá</small></div>
+                <div class="sim-row"><b>Thank you</b><small>Obrigado</small></div>
+                <div class="sim-row"><b>See you later</b><small>Até logo</small></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="icon"><i class="fa-solid fa-volume-high"></i></div>
+              <h3>2. Áudio de pronúncia</h3>
+              <p>Carrega no botão e ouve cada frase com a voz inglesa mais natural disponível no teu dispositivo. Repete até soar bem.</p>
+              <div class="sim sim-audio">
+                <button class="mock-audio" id="demoAudio" type="button"><i class="fa-solid fa-play"></i> Ouvir “How are you?”</button>
+                <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="icon"><i class="fa-solid fa-circle-question"></i></div>
+              <h3>3. Quizzes e desafios</h3>
+              <p>Perguntas de escolha múltipla com correção imediata e pontuação. Experimenta aqui:</p>
+              <div class="sim sim-quiz" id="demoQuiz">
+                <p>Como se diz “Bom dia” em inglês?</p>
+                <button type="button" data-ok="0">Good night</button>
+                <button type="button" data-ok="1">Good morning</button>
+                <button type="button" data-ok="0">Goodbye</button>
+                <small id="demoQuizMsg"></small>
+              </div>
+            </article>
+          </div>
+          <div class="steps">
+            <div><i class="fa-solid fa-hand-pointer"></i><span>Clica em <b>Começar Agora</b></span></div>
+            <i class="fa-solid fa-arrow-right sep"></i>
+            <div><i class="fa-solid fa-headphones"></i><span>Aprende e ouve</span></div>
+            <i class="fa-solid fa-arrow-right sep"></i>
+            <div><i class="fa-solid fa-trophy"></i><span>Pratica e ganha pontos</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="licencas" class="section">
+        <div class="container">
+          <h2 class="section-title">Escolhe a tua <span class="gold">licença</span></h2>
+          <p class="section-sub">Começa grátis e passa para o acesso completo quando quiseres. Sem fidelização.</p>
+          <div class="plans">
+            <article class="plan">
+              <h3>Conta Grátis</h3>
+              <div class="price">0 <small>MT</small></div>
+              <p class="plan-desc">Acesso imediato, sem pedir e-mail.</p>
+              <ul>
+                <li><i class="fa-solid fa-check"></i> Primeiras 5 aulas abertas</li>
+                <li><i class="fa-solid fa-check"></i> Áudio de pronúncia</li>
+                <li><i class="fa-solid fa-check"></i> Quizzes e desafios das aulas grátis</li>
+                <li class="off"><i class="fa-solid fa-lock"></i> Aulas 6 a 100</li>
+              </ul>
+              <a href="#curso" class="btn btn-outline btn-block" data-open-course>Começar Grátis</a>
+            </article>
+            <article class="plan featured">
+              <span class="ribbon">Mais popular</span>
+              <h3>Plano Mensal</h3>
+              <div class="price">200 <small>Meticais / mês</small></div>
+              <p class="plan-desc">Acesso completo durante 1 mês.</p>
+              <ul>
+                <li><i class="fa-solid fa-check"></i> Todas as 100 aulas</li>
+                <li><i class="fa-solid fa-check"></i> Todos os quizzes</li>
+                <li><i class="fa-solid fa-check"></i> Todos os áudios</li>
+                <li><i class="fa-solid fa-check"></i> Apoio por WhatsApp</li>
+              </ul>
+              <button class="btn btn-primary btn-block" data-plan="mensal">Assinar Plano Mensal</button>
+            </article>
+            <article class="plan">
+              <span class="ribbon alt">Melhor valor</span>
+              <h3>Plano Anual</h3>
+              <div class="price">1.000 <small>Meticais / ano</small></div>
+              <p class="plan-desc">Acesso completo durante 1 ano. Poupas 1.400 MT.</p>
+              <ul>
+                <li><i class="fa-solid fa-check"></i> Todas as 100 aulas</li>
+                <li><i class="fa-solid fa-check"></i> Todos os quizzes</li>
+                <li><i class="fa-solid fa-check"></i> Todos os áudios</li>
+                <li><i class="fa-solid fa-check"></i> Apoio por WhatsApp</li>
+              </ul>
+              <button class="btn btn-primary btn-block" data-plan="anual">Assinar Plano Anual</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="avaliacoes" class="section">
+        <div class="container">
+          <h2 class="section-title">O que dizem os <span class="gold">nossos alunos</span></h2>
+          <p class="section-sub">Histórias reais de quem já está a falar inglês com mais confiança.</p>
+          <div class="cards-4">
+            <article class="card testimonial">
+              <div class="stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p>“Comecei do zero e em dois meses já consigo apresentar-me e perceber músicas em inglês. As aulas curtas ajudam muito.”</p>
+              <div class="person"><span class="avatar">CS</span><div><b>Carlos Sitoe</b><small>Maputo</small></div></div>
+            </article>
+            <article class="card testimonial">
+              <div class="stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p>“O áudio é o que mais gosto: repito as frases no telemóvel a caminho do trabalho e a minha pronúncia melhorou imenso.”</p>
+              <div class="person"><span class="avatar">AP</span><div><b>Ana Paula</b><small>Matola</small></div></div>
+            </article>
+            <article class="card testimonial">
+              <div class="stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p>“Paguei com e-Mola e o acesso foi ativado rapidamente. Por 200 meticais, é o melhor investimento que fiz este ano.”</p>
+              <div class="person"><span class="avatar">JM</span><div><b>João Mucavele</b><small>Beira</small></div></div>
+            </article>
+            <article class="card testimonial">
+              <div class="stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p>“Os quizzes tornam tudo mais divertido. Consegui a minha entrevista de emprego em inglês e passei! Recomendo a todos.”</p>
+              <div class="person"><span class="avatar">BT</span><div><b>Beatriz Tavares</b><small>Nampula</small></div></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="container narrow">
+          <h2 class="section-title">Perguntas <span class="gold">frequentes</span></h2>
+          <p class="section-sub">As dúvidas mais comuns sobre cursos de inglês online.</p>
+          <div class="faq" id="faqList">
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">O curso serve para iniciantes do zero? <i class="fa-solid fa-chevron-down"></i></button>
+              <div class="faq-a"><p>Sim. O primeiro módulo começa com cumprimentos, números, cores e o verbo “to be”. Todas as frases têm tradução em português, por isso não precisas de saber nada de inglês para começar. À medida que avanças, os módulos sobem de nível até ao inglês avançado.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">Como funciona o acesso depois de pagar? <i class="fa-solid fa-chevron-down"></i></button>
+              <div class="faq-a"><p>Escolhes o plano, preenches o teu nome e telefone e transferes o valor por e-Mola para o número 87 22 37 084 (Inglês para Todos). Depois enviamos-te uma mensagem pré-preenchida no WhatsApp para anexares o comprovativo. Assim que confirmarmos o pagamento, o acesso completo às 100 aulas é ativado para o teu número durante 1 mês ou 1 ano, conforme o plano.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">Posso estudar no telemóvel? <i class="fa-solid fa-chevron-down"></i></button>
+              <div class="faq-a"><p>Sim. O site adapta-se a telemóveis, tablets e computadores. Podes estudar no autocarro, em casa ou no intervalo do trabalho. Só precisas de ligação à internet e de um navegador atualizado (Chrome, Safari, Edge ou Firefox).</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">Como posso treinar a pronúncia? <i class="fa-solid fa-chevron-down"></i></button>
+              <div class="faq-a"><p>Em cada aula tens um botão de áudio ao lado de cada frase. Ouve, repete em voz alta e volta a ouvir para comparares. Podes ainda usar o botão “Ouvir tudo” para ouvir a aula completa e o botão de voz lenta para perceberes cada palavra. Treinar 10 a 15 minutos por dia traz resultados rápidos.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">Existe fidelização ou renovação automática? <i class="fa-solid fa-chevron-down"></i></button>
+              <div class="faq-a"><p>Não. Não há fidelização nem cobranças automáticas. Pagas apenas o período que escolheres (1 mês ou 1 ano) e, no fim, renovas só se quiseres. A Conta Grátis continua disponível sem prazo.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contactos" class="section">
+        <div class="container narrow">
+          <div class="contact-card">
+            <div class="icon big"><i class="fa-brands fa-whatsapp"></i></div>
+            <h2>Precisas de ajuda? <span class="gold">Fala connosco</span></h2>
+            <p>O nosso apoio responde diretamente por telemóvel e WhatsApp. Tira dúvidas sobre as aulas, os planos ou o pagamento.</p>
+            <p class="phone"><i class="fa-solid fa-phone"></i> <a href="tel:+258872237084">87 22 37 084</a></p>
+            <div class="hero-actions center">
+              <a class="btn btn-primary btn-lg" target="_blank" rel="noopener" href="https://wa.me/258872237084"><i class="fa-brands fa-whatsapp"></i> Abrir WhatsApp</a>
+              <a class="btn btn-outline btn-lg" href="tel:+258872237084"><i class="fa-solid fa-phone"></i> Ligar agora</a>
+            </div>
+            <small class="muted">Horário de apoio: segunda a sábado, das 8h às 20h.</small>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="container foot">
+          <span><span class="logo-mark">EN</span> Inglês para Todos</span>
+          <span>© 2026 Inglês para Todos. Todos os direitos reservados.</span>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ================= ÁREA DO CURSO ================= -->
+    <div id="course" class="course" hidden>
+      <div class="container course-wrap">
+        <div class="course-head">
+          <div>
+            <h1>Área do <span class="gold">Curso</span></h1>
+            <p class="muted">Conta Grátis ativa · <span id="progText">0 de 100 aulas concluídas</span> · <span id="pointsText">0 pontos</span></p>
+          </div>
+          <div class="course-head-actions">
+            <button class="btn btn-outline btn-sm" id="sidebarToggle"><i class="fa-solid fa-list"></i> Lista de aulas</button>
+            <button class="btn btn-primary btn-sm" data-plan="mensal"><i class="fa-solid fa-unlock"></i> Desbloquear tudo</button>
+          </div>
+        </div>
+        <div class="progress"><div id="progBar"></div></div>
+        <div class="course-grid">
+          <aside class="sidebar" id="sidebar" aria-label="Lista de aulas"></aside>
+          <section class="lesson" id="lessonPanel" aria-live="polite"></section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= MODAL DE PAGAMENTO ================= -->
+  <div class="modal" id="payModal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="payTitle">
+      <button class="modal-x" data-close aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+      <h2 id="payTitle">Finalizar subscrição</h2>
+      <p class="plan-chosen" id="payPlanLabel"></p>
+      <form id="payForm" novalidate>
+        <label for="payName">O teu nome</label>
+        <input id="payName" type="text" placeholder="Ex.: Carlos Sitoe" autocomplete="name" required>
+        <label for="payPhone">O teu número de telefone</label>
+        <input id="payPhone" type="tel" inputmode="tel" placeholder="Ex.: 84 123 4567" autocomplete="tel" required>
+        <fieldset>
+          <legend>Método de pagamento</legend>
+          <label class="method"><input type="radio" name="method" value="e-Mola" checked> <span class="method-box"><i class="fa-solid fa-mobile-screen-button"></i><b>e-Mola</b></span></label>
+        </fieldset>
+        <div class="pay-info">
+          <p><i class="fa-solid fa-circle-info"></i> Transfere <b id="payAmount">200 MT</b> por <b>e-Mola</b> para o número:</p>
+          <p class="pay-number">87 22 37 084 <small>Inglês para Todos</small></p>
+          <p class="muted small">Depois de confirmares, abriremos o WhatsApp para enviares o comprovativo.</p>
+        </div>
+        <p class="form-error" id="payError" role="alert"></p>
+        <button type="submit" class="btn btn-primary btn-block btn-lg"><i class="fa-brands fa-whatsapp"></i> Confirmar e enviar comprovativo</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= CONFIRMAÇÃO ================= -->
+  <div class="modal" id="doneModal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box center-text" role="dialog" aria-modal="true" aria-labelledby="doneTitle">
+      <button class="modal-x" data-close aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+      <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+      <h2 id="doneTitle">Pedido registado!</h2>
+      <p id="doneText"></p>
+      <ol class="done-steps">
+        <li>Faz a transferência por <b>e-Mola</b> para <b>87 22 37 084</b>.</li>
+        <li>No WhatsApp, envia o comprovativo na mensagem já preparada.</li>
+        <li>Ativamos o teu acesso completo após confirmar o pagamento.</li>
+      </ol>
+      <a id="doneWa" class="btn btn-primary btn-block" target="_blank" rel="noopener" href="https://wa.me/258872237084"><i class="fa-brands fa-whatsapp"></i> Abrir WhatsApp novamente</a>
+      <button class="btn btn-outline btn-block" data-close>Fechar</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+  <script src="js/bg3d.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
